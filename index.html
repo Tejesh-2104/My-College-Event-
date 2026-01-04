@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My College Event</title>
+
+<!-- jsPDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 class="title">My College Event</h1>
+
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('register')">Register</button>
+<button onclick="show('payment')">Payment</button>
+<button onclick="show('transactions')">Transactions</button>
+<button onclick="contact()">Contact</button>
+</nav>
+
+<section id="home" class="event-section">
+<h2>Annual Tech Fest 2026</h2>
+<p>📅 April 21 & 22, 2026<br>📍 GITAM UNIVERSITY</p>
+</section>
+
+<section id="register" style="display:none">
+<h2>Event Registration</h2>
+<input id="name" placeholder="Student Name">
+<input id="email" placeholder="Student Email">
+<input id="mobile" placeholder="Student Mobile Number">
+
+<select id="event">
+<option>Select Event</option>
+<option>Hackathon</option>
+<option>Paper Presentation</option>
+<option>Project Expo</option>
+<option>Cultural Night</option>
+<option>Sports</option>
+</select><br><br>
+
+<button onclick="register()">Submit</button>
+</section>
+
+<section id="payment" style="display:none">
+<h2>Payment</h2>
+<p>UPI ID: <b>stsvardhan@ybl</b></p>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=stsvardhan@ybl">
+
+<br><br>
+
+<button onclick="pay('UPI')">Pay via UPI</button>
+<button onclick="pay('Card')">Pay via Card</button>
+<button onclick="pay('Net Banking')">Pay via Net Banking</button>
+</section>
+
+<section id="transactions" style="display:none">
+<h2>Transaction History</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Event</th>
+<th>Mode</th>
+<th>Amount</th>
+</tr>
+<tbody id="tbody"></tbody>
+</table>
+</section>
+
+<footer>
+<p>📞 9391676841 | 📧 tsuriset@gitam.in</p>
+<p>© 2026 My College Event</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
